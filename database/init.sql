@@ -24,6 +24,5 @@ CREATE INDEX IF NOT EXISTS idx_events_time ON events(event_time);
 CREATE INDEX IF NOT EXISTS idx_events_type ON events(event_type);
 CREATE INDEX IF NOT EXISTS idx_events_user ON events(user_id);
 
--- Комментарии к таблицам
 COMMENT ON TABLE events IS 'Сырые события интернет-магазина';
 COMMENT ON TABLE hourly_stats IS 'Агрегированная статистика по часам';
