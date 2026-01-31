@@ -1,0 +1,21 @@
+{
+  "dashboard": {
+    "title": "Интернет-магазин",
+    "panels": [
+      {
+        "title": "События по времени",
+        "type": "graph",
+        "targets": [{
+          "rawSql": "SELECT date_trunc('minute', event_time) as time, COUNT(*) as events FROM events WHERE $__timeFilter(event_time) GROUP BY time ORDER BY time"
+        }]
+      },
+      {
+        "title": "Типы событий",
+        "type": "piechart",
+        "targets": [{
+          "rawSql": "SELECT event_type, COUNT(*) as count FROM events WHERE $__timeFilter(event_time) GROUP BY event_type"
+        }]
+      }
+    ]
+  }
+}
